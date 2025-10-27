@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación Fiesta de Promoción</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #0b1a3d; /* Azul profundo */
+        color: white;
+        text-align: center;
+      }
+
+      header {
+        background-image: url("promo.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px;
+        color: white;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(11, 26, 61, 0.6);
+        z-index: 1;
+      }
+
+      header h1,
+      header p {
+        position: relative;
+        z-index: 2;
+      }
+
+      header img.logo {
+        width: 120px;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
+        border: 4px solid white;
+        border-radius: 50%;
+      }
+
+      .intro {
+        background-color: #0e204b;
+        padding: 40px 20px;
+        border-top: 3px solid white;
+        border-bottom: 3px solid white;
+      }
+
+      .intro p {
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+
+      .countdown {
+        margin: 50px 0;
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .countdown div {
+        background-color: #10285e;
+        padding: 20px;
+        border-radius: 10px;
+        width: 120px;
+      }
+
+      .countdown span {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .event-date {
+        background-color: #0e204b;
+        padding: 30px 20px;
+        border-top: 3px solid white;
+        border-bottom: 3px solid white;
+      }
+
+      .event-date h2 {
+        margin-bottom: 10px;
+      }
+      .event-info {
+        background-color: #10285e;
+        padding: 40px 20px;
+      }
+
+      .event-info h2 {
+        margin-bottom: 15px;
+      }
+
+      .dress-code {
+        background-color: #0b1a3d;
+        padding: 40px 20px;
+        border-top: 3px solid white;
+      }
+
+      iframe {
+        width: 90%;
+        height: 300px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      footer {
+        padding: 20px;
+        background-color: #0e204b;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo.jpeg" alt="Logo Promoción" class="logo" />
+      <h1>¡Gran Fiesta de Promoción 2025!</h1>
+      <p>Celebrando juntos el cierre de una etapa inolvidable 💙</p>
+    </header>
+
+    <section class="intro">
+      <p>
+        Ha llegado el momento de celebrar todo el esfuerzo, las risas y los
+        recuerdos que hemos compartido. Esta noche marcará el inicio de nuevos
+        caminos, pero también el final de una hermosa etapa. ¡Prepárate para una
+        noche mágica llena de alegría, amistad y emoción!
+      </p>
+    </section>
+
+    <section class="countdown" id="countdown">
+      <div>
+        <p>Días</p>
+        <span id="days">0</span>
+      </div>
+      <div>
+        <p>Horas</p>
+        <span id="hours">0</span>
+      </div>
+      <div>
+        <p>Minutos</p>
+        <span id="minutes">0</span>
+      </div>
+      <div>
+        <p>Segundos</p>
+        <span id="seconds">0</span>
+      </div>
+    </section>
+
+    <section class="event-date">
+      <h2>🗓️ Fecha y Hora</h2>
+      <p>Viernes 19 de diciembre de 2025</p>
+      <p>Desde las 7:00 p.m.</p>
+    </section>
+
+    <section class="event-info">
+      <h2>📍 Lugar del Evento</h2>
+      <p>Kochawasi – Av. Chillón Trapiche 5, Comas 15316</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.302370012695!2d-77.06719908766796!3d-11.926272040547518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1b720d74167%3A0xb1d23b2df95204c8!2sKochawasi%20Parque%20Acu%C3%A1tico!5e0!3m2!1ses!2spe!4v1761604044404!5m2!1ses!2spe"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="dress-code">
+      <h2>👔 Código de Vestimenta</h2>
+      <p>
+        Formal y elegante. Brilla con tu mejor estilo en esta noche tan especial
+        ✨
+      </p>
+    </section>
+
+    <footer>
+      <p>Promoción 2025 – Con amor, para siempre 💙</p>
+    </footer>
+
+    <script>
+      const eventDate = new Date("December 19, 2025 19:00:00").getTime();
+
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+          clearInterval(interval);
+          document.getElementById("countdown").innerHTML =
+            "<h2>¡La fiesta ha comenzado! 🎉</h2>";
+        }
+      };
+
+      const interval = setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>
