@@ -124,6 +124,7 @@
         font-size: 0.9rem;
       }
     </style>
+    
   </head>
   <body>
     <header>
@@ -131,6 +132,25 @@
       <h1>¡Gran Fiesta de Promoción 2025!</h1>
       <p>Celebrando juntos el cierre de una etapa inolvidable 💙</p>
     </header>
+    <button id="playMusic" style="background:#0e204b;color:white;padding:10px 20px;border:none;border-radius:8px;margin-top:10px;cursor:pointer;">
+  🎵 Reproducir música
+</button>
+
+<audio id="bgMusic" loop>
+  <source src="LosGraduados.mp3" type="audio/mpeg" />
+  Tu navegador no soporta el audio.
+</audio>
+
+<script>
+  const playButton = document.getElementById('playMusic');
+  const bgMusic = document.getElementById('bgMusic');
+
+  playButton.addEventListener('click', () => {
+    bgMusic.play();
+    playButton.style.display = 'none'; // Oculta el botón después de iniciar
+  });
+</script>
+
 
     <section class="intro">
       <p>
@@ -187,11 +207,7 @@
         ✨
       </p>
     </section>
-    <audio autoplay loop>
-      <source src="./LosGraduados.mp3" type="audio/mpeg" />
-      Tu navegador no soporta el audio.
-    </audio>
-
+   
     <footer>
       <p>Promoción 2025 – Con amor, para siempre 💙</p>
     </footer>
